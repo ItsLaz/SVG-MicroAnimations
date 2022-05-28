@@ -35,3 +35,17 @@ notification.addEventListener("click", () => {
     { scale: 1.3, opacity: 0, duration: 1.2 }
   );
 });
+
+const message = document.querySelector(".messages");
+gsap.set(".flap", { transformOrigin: "top" });
+message.addEventListener("click", () => {
+  tl.fromTo(".messages-svg", { scale: 1 }, { scale: 0.9 });
+  tl.fromTo(".flap", { scale: 1 }, { scale: -1 }, "<50%");
+  tl.fromTo(".messages-svg", { scale: 0.9 }, { scale: 1 }, "<50%");
+  tl.fromTo(
+    ".note",
+    { y: 0, opacity: 1 },
+    { y: -40, opacity: 0, duration: 0.75 }
+  );
+  tl.to(".flap", { scale: 1 }, "<50%");
+});
