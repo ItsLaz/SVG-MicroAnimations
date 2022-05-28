@@ -28,3 +28,8 @@ body {
   align-items: center;
   column-gap: 2rem;
 }
+
+.notification-svg,
+.messages-svg {
+  overflow: visible;
+}
